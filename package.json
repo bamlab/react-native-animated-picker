@@ -1,0 +1,17 @@
+{
+  "name": "react-native-animated-picker",
+  "version": "0.1.0",
+  "description": "An ios picker inside a keyboard and other utils to make custom keyboards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reactnative",
+    "react",
+    "picker",
+    "keyboard"
+  ],
+  "author": "Tiago Ferreira",
+  "license": "MIT"
+}
