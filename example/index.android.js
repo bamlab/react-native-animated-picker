@@ -9,26 +9,11 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
+import { CustomKeyboard, CustomPicker } from 'react-native-animated-picker';
 
-class example extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+import pokemonData from 'pokemon-data';
 
 const styles = StyleSheet.create({
   container: {
@@ -48,5 +33,51 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+const starters = {
+  1: pokemonData.getById(1),
+  4: pokemonData.getById(4),
+  7: pokemonData.getById(7),
+};
+
+class example extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pokemon: 1,
+    };
+  }
+
+  render() {
+    return (
+      <CustomKeyboard>
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Welcome to Animated picker example!
+          </Text>
+          <Text style={styles.instructions}>
+            Choose your starter:
+          </Text>
+          <CustomPicker
+            viewStyle={{
+              backgroundColor: 'black',
+            }}
+            textStyle={{
+              color: 'white',
+            }}
+            initialValue={this.state.pokemon}
+            onSelect={(pokemon) => this.setState({ pokemon })}
+            items={starters}
+            onValueChange={(pokemon) => {
+              this.setState({
+                pokemon,
+              });
+            }}
+          />
+        </View>
+      </CustomKeyboard>
+    );
+  }
+}
 
 AppRegistry.registerComponent('example', () => example);

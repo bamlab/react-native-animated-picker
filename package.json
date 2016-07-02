@@ -6,12 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "peerDependencies": {
+    "react-native": ">=v0.26.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.11.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.3.0",
+    "eslint-plugin-react": "^5.1.1"
+  },
   "keywords": [
     "reactnative",
     "react",
     "picker",
     "keyboard"
   ],
-  "author": "Tiago Ferreira",
+  "author": "Tiago Ferreira <tiagojdferreira@gmail.com>",
   "license": "MIT"
 }
